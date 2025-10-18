@@ -142,6 +142,62 @@ DELETE /api/users/:id
 Authorization: Bearer {token}
 ```
 
+### Bookings Management
+
+#### ดึงรายการจองทั้งหมด
+```http
+GET /api/bookings
+```
+
+#### กรองตามสถานะ
+```http
+GET /api/bookings?status=pending
+GET /api/bookings?status=confirmed
+GET /api/bookings?status=cancelled
+GET /api/bookings?status=completed
+```
+
+#### กรองตามวันที่
+```http
+GET /api/bookings?date=2024-12-25
+```
+
+#### ดึงข้อมูลการจอง
+```http
+GET /api/bookings/:id
+```
+
+#### สร้างการจอง
+```http
+POST /api/bookings
+Content-Type: application/json
+
+{
+  "customerName": "สมชาย ใจดี",
+  "email": "somchai@example.com",
+  "phone": "081-234-5678",
+  "service": "Haircut",
+  "bookingDate": "2024-12-25",
+  "bookingTime": "14:00",
+  "notes": "ต้องการตัดผมสั้น"
+}
+```
+
+#### แก้ไขการจอง
+```http
+PATCH /api/bookings/:id
+Content-Type: application/json
+
+{
+  "status": "confirmed"
+}
+```
+
+#### ลบการจอง
+```http
+DELETE /api/bookings/:id
+```
+
 ## 🏗 โครงสร้างโปรเจค
 
 ```
@@ -160,6 +216,12 @@ backend/
 │   │   ├── users.controller.ts
 │   │   ├── users.service.ts
 │   │   └── users.module.ts
+│   ├── bookings/             # Bookings module
+│   │   ├── dto/              # Data Transfer Objects
+│   │   ├── schemas/          # MongoDB schemas
+│   │   ├── bookings.controller.ts
+│   │   ├── bookings.service.ts
+│   │   └── bookings.module.ts
 │   ├── app.module.ts         # Root module
 │   └── main.ts               # Entry point
 ├── .env.example              # Environment variables example
@@ -167,6 +229,7 @@ backend/
 ├── nest-cli.json
 ├── package.json
 ├── tsconfig.json
+├── TESTING.md                # API testing guide
 └── README.md
 ```
 
