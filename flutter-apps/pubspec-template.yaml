@@ -1,0 +1,40 @@
+# Template pubspec.yaml file
+# Copy and modify for each app
+
+name: flutter_mui_app
+description: Flutter Material Design Tutorial App
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  # Add more dependencies as needed:
+  # http: ^1.1.0
+  # provider: ^6.0.0
+  # shared_preferences: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets:
+  # assets:
+  #   - images/
+  #   - assets/
+
+  # To add custom fonts:
+  # fonts:
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: fonts/Roboto-Regular.ttf
+  #       - asset: fonts/Roboto-Bold.ttf
+  #         weight: 700
