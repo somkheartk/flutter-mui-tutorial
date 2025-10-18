@@ -1,5 +1,5 @@
 # Flutter Material Design Tutorial (MUI)
-### บทเรียน Flutter เน้นการใช้ Material Design Components พร้อม 10 แอพตัวอย่าง
+### บทเรียน Flutter เน้นการใช้ Material Design Components พร้อม 11 แอพตัวอย่าง
 
 ![Flutter](https://img.shields.io/badge/Flutter-3.0+-blue.svg)
 ![NestJS](https://img.shields.io/badge/NestJS-10.0+-red.svg)
@@ -7,11 +7,11 @@
 
 ## 📚 เกี่ยวกับ
 
-บทเรียนนี้เน้นการสอนการใช้งาน Material Design Components ใน Flutter พร้อมแอพตัวอย่าง 10 แอพที่ครอบคลุมการใช้งานจริง รวมถึง Backend API ที่สร้างด้วย NestJS และ MongoDB
+บทเรียนนี้เน้นการสอนการใช้งาน Material Design Components ใน Flutter พร้อมแอพตัวอย่าง 11 แอพที่ครอบคลุมการใช้งานจริง รวมถึง Backend API ที่สร้างด้วย NestJS และ MongoDB
 
 ## 🎯 เนื้อหาที่สอน
 
-### 10 แอพตัวอย่าง
+### 11 แอพตัวอย่าง
 
 1. **Basic Material Components** - ปุ่ม, การ์ด, AppBar
 2. **Form Controls** - TextField, Checkbox, Radio, Switch
@@ -23,6 +23,7 @@
 8. **Animations and Transitions** - แอนิเมชันและการเปลี่ยนผ่าน
 9. **REST API Integration** - การเชื่อมต่อ API
 10. **Full CRUD Application** - แอพพลิเคชันจัดการข้อมูลแบบสมบูรณ์
+11. **Booking App** - แอพจองคิวพร้อม API Integration
 
 ## 🚀 เริ่มต้นใช้งาน
 
@@ -80,7 +81,7 @@ flutter run
 
 ```
 flutter-mui-tutorial/
-├── flutter-apps/              # แอพ Flutter ทั้ง 10 แอพ
+├── flutter-apps/              # แอพ Flutter ทั้ง 11 แอพ
 │   ├── app-01-basic-components/
 │   ├── app-02-form-controls/
 │   ├── app-03-navigation/
@@ -90,9 +91,13 @@ flutter-mui-tutorial/
 │   ├── app-07-theming-styling/
 │   ├── app-08-animations/
 │   ├── app-09-api-integration/
-│   └── app-10-full-crud/
+│   ├── app-10-full-crud/
+│   └── app-11-booking/        # แอพจองคิว
 ├── backend/                   # NestJS Backend API
 │   ├── src/
+│   │   ├── users/
+│   │   ├── auth/
+│   │   └── bookings/          # Booking API
 │   ├── package.json
 │   └── README.md
 ├── docs/                      # เอกสารประกอบ
@@ -116,6 +121,7 @@ flutter-mui-tutorial/
 - [08 - Animations and Transitions](./docs/08-animations.md)
 - [09 - REST API Integration](./docs/09-api-integration.md)
 - [10 - Full CRUD Application](./docs/10-full-crud.md)
+- [11 - Booking App](./docs/11-booking.md)
 
 ## 🛠 Backend API
 
@@ -123,19 +129,30 @@ Backend สร้างด้วย NestJS และ MongoDB ประกอบ�
 
 - **User Management** - จัดการผู้ใช้
 - **Authentication** - ระบบล็อกอิน/ลงทะเบียน
+- **Booking System** - ระบบจองคิว
 - **CRUD Operations** - สร้าง อ่าน แก้ไข ลบข้อมูล
 - **File Upload** - อัพโหลดไฟล์
 
 ### API Endpoints
 
 ```
+# Users
 GET    /api/users          - ดึงรายการผู้ใช้ทั้งหมด
 GET    /api/users/:id      - ดึงข้อมูลผู้ใช้
 POST   /api/users          - สร้างผู้ใช้ใหม่
-PUT    /api/users/:id      - แก้ไขข้อมูลผู้ใช้
+PATCH  /api/users/:id      - แก้ไขข้อมูลผู้ใช้
 DELETE /api/users/:id      - ลบผู้ใช้
+
+# Authentication
 POST   /api/auth/login     - ล็อกอิน
 POST   /api/auth/register  - ลงทะเบียน
+
+# Bookings
+GET    /api/bookings       - ดึงรายการจองทั้งหมด
+GET    /api/bookings/:id   - ดึงข้อมูลการจอง
+POST   /api/bookings       - สร้างการจองใหม่
+PATCH  /api/bookings/:id   - แก้ไขข้อมูลการจอง
+DELETE /api/bookings/:id   - ลบการจอง
 ```
 
 ## 🎨 Material Design Components ที่สอน
